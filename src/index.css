@@ -1,0 +1,91 @@
+
+/* ---------- 🌍 Root Variables ---------- */
+:root {
+  --bg: #000000;           /* Main background */
+  --card-bg: #0b0b0b;      /* Card and section background */
+  --accent: #dc2626;       /* Primary red */
+  --accent-hover: #b91c1c; /* Hover red */
+  --gain: #28a745;         /* Green for stock gain */
+  --loss: #dc3545;         /* Red for stock loss */
+  --muted: #bdbdbd;        /* Muted gray text */
+  --border: #222222;       /* Border color */
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 12px;
+  --max-width: 1200px;
+  --gap: 16px;
+
+  --font-main: "Manrope", "Inter", "Segoe UI", sans-serif;
+}
+
+/* ---------- 🧩 Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 🌙 Global Body ---------- */
+body {
+  background-color: var(--bg);
+  color: #ffffff;
+  font-family: var(--font-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 🧱 Global Layout Helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- 🖱️ Buttons ---------- */
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ---------- 🔗 Links ---------- */
+a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ---------- 🧭 Responsive Utilities ---------- */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea {
+  font-family: var(--font-main);
+  color: #fff;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+/* ---------- 📱 Mobile Adjustments ---------- */
+@media (max-width: 768px) {
+  :root {
+    --gap: 12px;
+  }
+}

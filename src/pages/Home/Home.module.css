@@ -1,0 +1,86 @@
+.home {
+  background: #000;
+  color: white;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.hero p {
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+.hero input {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  height: 45px;
+  border-radius: 30px;
+  padding: 0 1rem;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  outline: none;
+}
+
+.hero input:focus {
+  border-color: #dc2626;
+}
+
+.trending {
+  margin-top: 3rem;
+}
+
+.trending h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.gain {
+  color: #28a745;
+}
+
+.loss {
+  color: #dc3545;
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}

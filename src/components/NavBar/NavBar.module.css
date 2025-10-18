@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+/* ---------- LEFT (Logo) ---------- */
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo h1 strong {
+  font-weight: 300;
+  color: var(--muted);
+}
+
+
+.logo h1 span {
+  font-weight: 300;
+  color: red;
+}
+
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+}
+
+/* ---------- RIGHT (Nav Links) ---------- */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.right a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.right a:hover {
+  color: var(--accent-hover);
+}
+
+.active {
+  color: var(--accent) !important;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+
+/* ---------- MENU BUTTON ---------- */
+.menuBtn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  border-radius: var(--radius);
+  padding: 0.4rem 0.6rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .right a {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+}

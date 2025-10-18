@@ -1,0 +1,4 @@
+.grid{ display:flex; gap:16px; margin-top:12px; flex-wrap:wrap; }
+.card{
+  flex:1 1 250px; background:var(--card-bg); padding:16px; border-radius:12px;
+}

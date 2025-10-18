@@ -1,0 +1,10 @@
+.container {
+  padding: 40px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white; /* Adjust based on your theme */
+}
