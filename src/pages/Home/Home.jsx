@@ -4,6 +4,9 @@ import StockTicker from "../../components/StockTicker/StockTicker";
 import MarketTable from "../../components/MarketTable/MarketTable";
 import mockStocks from "../../api/mockStocks";
 import WhyChooseUs from "../../components/WhyChooseUS/WhyChooseUs";
+import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
+import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -61,7 +64,14 @@ const Home = () => {
         </section>
         {/* <MarketTable stocks={mockStocks} /> */}
 
-        <WhyChooseUs/>
+        <WhoWeAre />
+        <WhatWeDo />
+        <WhyChooseUs />
+
+        <div className={styles.buttons}>
+          <Link to="/about" className={styles.aboutBtn}>More About Us</Link>
+          <Link to= "/contact" className={styles.contactBtn}>Contact Us</Link>
+        </div>
       </main>
     </div>
   );

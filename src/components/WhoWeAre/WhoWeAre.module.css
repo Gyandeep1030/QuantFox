@@ -1,0 +1,159 @@
+
+
+/* Section wrapper */
+.aboutus_section {
+  background: var(--bg);
+  color: #fff;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container limits width */
+.container {
+  /* max-width: 1200px; */
+  width: 100%;
+}
+
+/* Row layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left image column */
+.imageWrapper {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  object-fit: cover;
+  animation: fadeInUp 0.9s ease both;
+}
+
+/* Right content column */
+.contentWrapper {
+  flex: 1 1 50%;
+  padding-left: 1rem;
+}
+
+.contentInner {
+  padding: 0.5rem 0;
+  animation: fadeInRight 0.9s ease both;
+}
+
+/* Red separator under heading */
+.separator {
+  width: 98px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Paragraph text */
+.description {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* CTA button */
+.btn {
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(229,62,62,0.12), inset 0 -2px 0 rgba(0,0,0,0.15);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(229,62,62,0.16), inset 0 -2px 0 rgba(0,0,0,0.2);
+  color: #fff;
+}
+
+/* Small icon spacing inside button (if icon present) */
+.btn i {
+  font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(22px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageWrapper {
+    order: -1; /* image appears above on small screens */
+  }
+
+  .contentWrapper {
+    padding-left: 0;
+  }
+
+  .image {
+    max-width: 92%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus_section { padding: 2.2rem 0.75rem; }
+
+  .title { font-size: 1.6rem; }
+
+  .description { font-size: 0.95rem; }
+
+  .separator { width: 70px; height: 3px; }
+}

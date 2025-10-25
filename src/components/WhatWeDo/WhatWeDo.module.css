@@ -1,0 +1,166 @@
+.section {
+  background: #000;
+  color: #fff;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.separator {
+  width: 100px;
+  height: 4px;
+  background: red;
+  margin: 0 auto 1.2rem;
+}
+
+.header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(255, 0, 0, 0.4);
+}
+
+.cardImg {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Overlay ---------- */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  background-blend-mode: multiply;
+  transition: background 0.3s ease;
+}
+
+.darkOverlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.redOverlay {
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.6), transparent);
+}
+
+.blackOverlay {
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.9), transparent);
+}
+
+/* ---------- Content ---------- */
+.cardContent {
+  width: 100%;
+  text-align: left;
+}
+
+.cardContent h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  background: #111;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: red;
+}
+
+.iconBtn {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.iconBtn:hover {
+  background: red;
+  border-color: red;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .cardImg {
+    height: 280px;
+  }
+
+  .btnGroup {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContent h5 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .iconBtn {
+    width: 32px;
+    height: 32px;
+  }
+}
