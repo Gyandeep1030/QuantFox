@@ -12,7 +12,7 @@ const TeamSection = () => {
       <div className={styles.members}>
         <div className={styles.card}>
           {/* <img src={ceo} alt="CEO" /> */}
-          <h3>Rajesh Mehta</h3>
+          <h3>Sameer</h3>
           <p>CEO & Founder</p>
         </div>
 

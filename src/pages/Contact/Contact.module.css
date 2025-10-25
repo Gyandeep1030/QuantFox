@@ -1,46 +1,50 @@
+/* ====== Base Styles ====== */
 .contactSection {
-  padding: 3rem 1rem;
+  padding: 1rem 1.5rem 2rem;
   color: white;
+  background-color: #000;
+  font-family: 'Arial', sans-serif;
 }
 
 .headerContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.headerText {
-  min-width: 18rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -0.033em;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.separator {
+  width: 420px;
+  height: 2px;
+  background: red;
+  margin: 0 auto 1rem;
+  border-radius: 2px;
 }
 
 .subtitle {
   color: #9ca3af;
   font-size: 1rem;
-  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* ====== Grid Layout ====== */
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  padding: 1rem;
+  gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .gridContainer {
     grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 }
 
@@ -51,18 +55,18 @@
   gap: 1.5rem;
 }
 
+/* ====== Left Column (Contact Info) ====== */
 .sectionHeading {
-  font-size: 1.375rem;
-  font-weight: bold;
-  padding: 1.25rem 1rem 0.75rem;
-  letter-spacing: -0.015em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: left;
 }
 
 .linksContainer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
 }
 
 .contactLink {
@@ -70,21 +74,23 @@
   align-items: center;
   justify-content: space-between;
   background-color: #111827;
-  padding: 0 1rem;
-  min-height: 3.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 0.5rem;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .contactLink:hover {
   background-color: #1f2937;
+  transform: translateY(-2px);
 }
 
 .linkContent {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 1;
+  overflow: hidden;
 }
 
 .iconWrapper {
@@ -94,38 +100,119 @@
   background-color: #1f2937;
   color: #ef4444;
   border-radius: 0.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-shrink: 0;
 }
 
 .contactText {
   color: #e5e7eb;
   font-size: 1rem;
   flex: 1;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .linkButton {
   background: none;
   border: none;
   color: #ef4444;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
+.linkButton:hover {
+  color: #ff6767;
+}
+
+/* ====== Address Section ====== */
+.addressSection {
+  background-color: #111827;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
+  padding: 1rem 1rem;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.addressSection:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+}
+
+.addressHeader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 auto 1.5rem;
+}
+
+.homeIcon {
+  background-color: #1f2937;
+  color: #ef4444;
+  border-radius: 0.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+.addressHeading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  line-height: 1;
+  color: #fff;
+}
+
+.addressContainer {
+  /* max-width: 400px; */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.addressRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f2937;
+  padding: 0.6rem 0;
+}
+
+.addressRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.value {
+  color: #e5e7eb;
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* ====== Right Column (Form) ====== */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 0 1rem;
+  gap: 1.25rem;
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .formGroup label {
@@ -135,22 +222,21 @@
 }
 
 .formGroup input,
-.formGroup select,
 .formGroup textarea {
-  background-color: #111827;
+  background-color: #000;
   border: 1px solid #374151;
   color: white;
   border-radius: 0.5rem;
-  padding: 0.625rem;
+  padding: 0.7rem;
   font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .formGroup input:focus,
-.formGroup select:focus,
 .formGroup textarea:focus {
   outline: none;
   border-color: #ef4444;
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
 }
 
 .submitButton {
@@ -158,13 +244,103 @@
   color: white;
   border: none;
   border-radius: 0.5rem;
-  height: 2.5rem;
-  font-weight: bold;
+  padding: 0.8rem;
+  font-weight: 600;
   cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .submitButton:hover {
   background-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
+  .sectionHeading {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+   .leftColumn {
+    order: 2;
+  }
+  .form {
+    padding: 1rem;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .separator {
+    width: 220px;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .homeIcon {
+    font-size: 1.6rem;
+  }
+  .addressHeading {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactLink {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .linkButton {
+    align-self: flex-end;
+  }
+  .iconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .contactText {
+    font-size: 0.9rem;
+  }
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 0.9rem;
+  }
+  .addressRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .value {
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  .addressHeader {
+    justify-content: center;
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .sectionHeading {
+    font-size: 1.2rem;
+  }
+  .addressHeading {
+    font-size: 1.2rem;
+  }
+  .homeIcon {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
 }

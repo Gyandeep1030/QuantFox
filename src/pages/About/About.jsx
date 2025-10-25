@@ -4,6 +4,11 @@ import MissionSection from "../../components/MissionSection/MissionSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import FloatingContact from "../../components/FloatingContact/FloatingContact";
+import Illustration from "../../assets/Image/Illustration-img.png"
+
+import { GrCertificate } from "react-icons/gr";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { FaWallet } from "react-icons/fa";
 const About = () => {
   return (
     <>
@@ -20,6 +25,7 @@ const About = () => {
           <button>Explore Our Platform</button>
         </div>
       </section>
+
       <WhoWeAre/>
 
       <section className={styles.section}>
@@ -31,10 +37,7 @@ const About = () => {
 
             <div className={styles.iconInfo}>
               <div className={styles.icon}>
-                <img
-                  src="https://pridecons.com/assetsweb/images/upload/benefit-icon-10.svg"
-                  alt="Professional Liability"
-                />
+                <FaPeopleGroup className={styles.iconMain}/>
               </div>
               <div className={styles.text}>
                 <h5>Professional Liability</h5>
@@ -47,10 +50,7 @@ const About = () => {
 
             <div className={styles.iconInfo}>
               <div className={styles.icon}>
-                <img
-                  src="https://pridecons.com/assetsweb/images/upload/benefit-icon-11.svg"
-                  alt="Trustworthy Company"
-                />
+                <GrCertificate className={styles.iconMain}/>
               </div>
               <div className={styles.text}>
                 <h5>Trustworthy Company</h5>
@@ -63,10 +63,7 @@ const About = () => {
 
             <div className={styles.iconInfo}>
               <div className={styles.icon}>
-                <img
-                  src="https://pridecons.com/assetsweb/images/upload/benefit-icon-12.svg"
-                  alt="Affordable Price"
-                />
+                <FaWallet className={styles.iconMain}/>
               </div>
               <div className={styles.text}>
                 <h5>Affordable Price</h5>
@@ -81,7 +78,7 @@ const About = () => {
           {/* Right Image */}
           <div className={styles.right}>
             <img
-              src="https://pridecons.com/assetsweb/images/upload/vector-art-2.png"
+              src={Illustration}
               alt="Illustration"
               className={styles.image}
             />

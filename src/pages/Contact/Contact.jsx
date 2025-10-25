@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
-
-// Font Awesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faPhone,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedin,
@@ -13,6 +12,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import FloatingContact from "../../components/FloatingContact/FloatingContact";
+import { FaHome } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,19 +25,15 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-
-    // Example: send form data to backend or email API
     alert("Message sent successfully!");
-
     setFormData({
       fullName: "",
       email: "",
@@ -49,21 +45,23 @@ const Contact = () => {
 
   return (
     <section className={styles.contactSection}>
+      {/* Header */}
       <div className={styles.headerContainer}>
-        <div className={styles.headerText}>
-          <p className={styles.title}>Contact QuantFox - LLP</p>
-          <p className={styles.subtitle}>
-            We'd love to hear from you. Please fill out the form below or
-            contact us using the information provided.
-          </p>
-        </div>
+        <p className={styles.title}>Contact QuantFox LLP</p>
+        <div className={styles.separator}></div>
+        <p className={styles.subtitle}>
+          We’d love to hear from you! Please fill out the form below or reach us
+          through any of the methods listed.
+        </p>
       </div>
 
+      {/* Grid Layout */}
       <div className={styles.gridContainer}>
         {/* Left Column */}
         <div className={styles.leftColumn}>
           <h2 className={styles.sectionHeading}>Get in Touch Directly</h2>
           <div className={styles.linksContainer}>
+            {/* Email */}
             <a className={styles.contactLink} href="mailto:quantfox7@gmail.com">
               <div className={styles.linkContent}>
                 <div className={styles.iconWrapper}>
@@ -74,7 +72,8 @@ const Contact = () => {
               <button className={styles.linkButton}>Email</button>
             </a>
 
-            <a className={styles.contactLink} href="tel:+91 93117 28534">
+            {/* Phone Numbers */}
+            <a className={styles.contactLink} href="tel:+919311728534">
               <div className={styles.linkContent}>
                 <div className={styles.iconWrapper}>
                   <FontAwesomeIcon icon={faPhone} size="lg" />
@@ -83,16 +82,18 @@ const Contact = () => {
               </div>
               <button className={styles.linkButton}>Call</button>
             </a>
+
             <a className={styles.contactLink} href="tel:+919654825156">
               <div className={styles.linkContent}>
                 <div className={styles.iconWrapper}>
                   <FontAwesomeIcon icon={faPhone} size="lg" />
                 </div>
-                <p className={styles.contactText}>+919654825156</p>
+                <p className={styles.contactText}>+91 96548 25156</p>
               </div>
               <button className={styles.linkButton}>Call</button>
             </a>
 
+            {/* Social Links */}
             <a
               className={styles.contactLink}
               href="https://www.facebook.com/profile.php?id=61582559970439"
@@ -122,6 +123,38 @@ const Contact = () => {
               </div>
               <button className={styles.linkButton}>Follow</button>
             </a>
+
+            {/* Address Section */}
+            <section className={styles.addressSection}>
+              <div className={styles.addressHeader}>
+                <FaHome className={styles.homeIcon} />
+                <p className={styles.addressHeading}>Address</p>
+              </div>
+
+              <div className={styles.addressContainer}>
+                <div className={styles.addressRow}>
+                  <span className={styles.label}>Address Line:</span>
+                  <span className={styles.value}>
+                    123, Quantum Tower, Sector 62
+                  </span>
+                </div>
+
+                <div className={styles.addressRow}>
+                  <span className={styles.label}>City:</span>
+                  <span className={styles.value}>Noida</span>
+                </div>
+
+                <div className={styles.addressRow}>
+                  <span className={styles.label}>State:</span>
+                  <span className={styles.value}>Uttar Pradesh</span>
+                </div>
+
+                <div className={styles.addressRow}>
+                  <span className={styles.label}>Pincode:</span>
+                  <span className={styles.value}>201301</span>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
 
@@ -161,7 +194,7 @@ const Contact = () => {
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="+1 (555) 987-6543"
+                placeholder="+91 98765 43210"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -192,12 +225,13 @@ const Contact = () => {
             </div>
 
             <button type="submit" className={styles.submitButton}>
-              <span>Send Message</span>
+              Send Message
             </button>
           </form>
         </div>
       </div>
-      <FloatingContact/>
+
+      <FloatingContact />
     </section>
   );
 };

@@ -1,9 +1,12 @@
+/* ===============================
+   HERO SECTION
+================================= */
 .hero {
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.9) 0%,
-      rgba(255, 0, 0, 0.3) 45%,
-      rgba(255, 0, 0, 0.3) 55%,
+      rgba(229, 9, 20, 0.3) 45%,
+      rgba(229, 9, 20, 0.3) 55%,
       rgba(0, 0, 0, 0.9) 100%
     );
   color: white;
@@ -12,7 +15,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
 }
 
 .content {
@@ -23,16 +27,15 @@
   color: white;
   font-size: 1.5rem;
   text-align: center;
-  padding: 0.1rem 0rem;
+  padding: 0.1rem 0;
   margin: 2rem auto;
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid #e50914;
   width: 20%;
 }
 
-
-/* 👇 Scoped button style */
+/* Hero button */
 .hero button {
-  background: red;
+  background: #e50914;
   border: none;
   padding: 1rem 2rem;
   border-radius: 8px;
@@ -47,42 +50,37 @@
   background: #ff4d4d;
 }
 
-
-
-
-/* :root {
-  --bg: #000;
-  --text: #fff;
-  --muted: #bfbfbf;
-  --accent: #e50914;
-  --accent-dark: #b1060f;
-  --radius: 16px;
-} */
-
-/* Section Wrapper */
+/* ===============================
+   SECTION WRAPPER
+================================= */
 .section {
   background: #000;
   color: #fff;
   padding: 5rem 1rem;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
-/* Container */
 .container {
   width: 100%;
   max-width: 1200px;
 }
 
-/* Layout */
+/* ===============================
+   ROW LAYOUT
+================================= */
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
-/* Left Content */
+/* -------------------------------
+   LEFT CONTENT
+--------------------------------- */
 .left {
   flex: 1 1 50%;
   padding-right: 2rem;
@@ -93,7 +91,7 @@
   font-weight: 800;
   color: #fff;
   margin-bottom: 3rem;
-  border-left: 5px solid  #e50914;
+  border-left: 5px solid #e50914;
   padding-left: 1rem;
 }
 
@@ -104,14 +102,14 @@
   margin-bottom: 2.5rem;
 }
 
-.icon img {
+.iconMain {
   width: 60px;
   height: 60px;
-  filter: drop-shadow(0 0 6px  #e50914);
+  filter: drop-shadow(0 0 6px #e50914);
   transition: transform 0.3s ease;
 }
 
-.icon img:hover {
+.iconMain:hover {
   transform: scale(1.08);
 }
 
@@ -120,7 +118,7 @@
 }
 
 .text h5 {
-  color:  #e50914;
+  color: #e50914;
   font-weight: 700;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -132,7 +130,9 @@
   font-size: 0.95rem;
 }
 
-/* Right Image */
+/* -------------------------------
+   RIGHT IMAGE
+--------------------------------- */
 .right {
   flex: 1 1 45%;
   display: flex;
@@ -149,7 +149,9 @@
   animation: fadeInUp 1s ease both;
 }
 
-/* Animations */
+/* ===============================
+   ANIMATIONS
+================================= */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -161,7 +163,46 @@
   }
 }
 
-/* ✅ Responsive */
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+================================= */
+
+/* Large screens ≤ 1400px */
+@media (max-width: 1400px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .image {
+    max-width: 480px;
+  }
+
+  .icon img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .text h5 {
+    font-size: 1.05rem;
+  }
+
+  .text p {
+    font-size: 0.92rem;
+  }
+}
+
+/* Medium screens ≤ 1200px */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .image {
+    max-width: 450px;
+  }
+}
+
+/* Tablets ≤ 992px */
 @media (max-width: 992px) {
   .row {
     flex-direction: column;
@@ -176,7 +217,7 @@
     font-size: 2rem;
     margin-bottom: 2rem;
     border-left: none;
-    border-bottom: 3px solid  #e50914;
+    border-bottom: 3px solid #e50914;
     padding-left: 0;
     padding-bottom: 0.5rem;
     display: inline-block;
@@ -200,11 +241,8 @@
   }
 }
 
-@media (max-width: 576px) {
-  .section {
-    padding: 3rem 1rem;
-  }
-
+/* Small tablets ≤ 768px */
+@media (max-width: 768px) {
   .title {
     font-size: 1.8rem;
   }
@@ -220,5 +258,77 @@
 
   .text p {
     font-size: 0.9rem;
+  }
+
+  .image {
+    max-width: 350px;
+  }
+}
+
+/* Mobile ≤ 576px */
+@media (max-width: 576px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .iconInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .image {
+    max-width: 300px;
+  }
+
+  .icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .text h5 {
+    font-size: 0.95rem;
+  }
+
+  .text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small mobile ≤ 400px */
+@media (max-width: 400px) {
+  .aboutH1 {
+    font-size: 1.3rem;
+    width: 40%;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .image {
+    max-width: 250px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .text h5 {
+    font-size: 0.9rem;
+  }
+
+  .text p {
+    font-size: 0.8rem;
   }
 }

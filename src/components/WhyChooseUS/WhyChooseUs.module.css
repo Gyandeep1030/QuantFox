@@ -30,10 +30,10 @@
 }
 
 .separator {
-  width: 270px;
+  /* width:; */
   height: 4px;
   background: red;
-  margin: 0 auto 1rem; /* Centered separator under heading */
+  /* margin: 0 auto; Centered separator under heading */
 }
 
 .lead {
