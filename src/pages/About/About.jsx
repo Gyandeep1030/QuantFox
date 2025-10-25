@@ -3,6 +3,7 @@ import styles from "./About.module.css";
 import MissionSection from "../../components/MissionSection/MissionSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
+import FloatingContact from "../../components/FloatingContact/FloatingContact";
 const About = () => {
   return (
     <>
@@ -91,6 +92,7 @@ const About = () => {
 
       <MissionSection />
       <TeamSection />
+      <FloatingContact/>
     </>
   );
 };

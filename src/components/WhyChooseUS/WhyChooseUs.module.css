@@ -1,3 +1,4 @@
+/* ---------- BASE STYLES ---------- */
 .section {
   padding: 4rem 1rem;
   background: #000;
@@ -6,7 +7,7 @@
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
@@ -21,23 +22,25 @@
   margin-bottom: 2rem;
 }
 
-.separator {
-  width: 100px;
-  height: 4px;
-  background: red;
-  margin-bottom: 1rem;
-}
-
-h2 {
+.heading {
   font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.separator {
+  width: 270px;
+  height: 4px;
+  background: red;
+  margin: 0 auto 1rem; /* Centered separator under heading */
 }
 
 .lead {
   font-size: 1.1rem;
   color: #ccc;
   max-width: 500px;
+  line-height: 1.5;
 }
 
 /* ---------- CARDS ---------- */
@@ -45,18 +48,17 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .card {
   color: white;
   border-radius: 16px;
   padding: 1.5rem;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply;
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .card:hover {
@@ -65,18 +67,10 @@ h2 {
 }
 
 .cardHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
-}
-
-.cardHeader i {
-  font-size: 1.3rem;
-  color: red;
 }
 
 .cardBody p {
@@ -119,22 +113,38 @@ h2 {
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+/* Large screens (≤1200px) */
+@media (max-width: 1200px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .separator {
+    width: 220px;
+  }
+  .card {
+    max-width: 400px;
+  }
+}
+
+/* Medium screens (≤992px) - Tablets */
 @media (max-width: 992px) {
   .container {
     flex-direction: column-reverse;
     text-align: center;
   }
 
-  .right {
-    text-align: center;
-  }
-
-  .left {
-    text-align: center;
+  .heading {
+    font-size: 1.8rem;
   }
 
   .separator {
+    width: 180px;
     margin: 0 auto 1rem;
+  }
+
+  .lead {
+    margin: 0 auto;
   }
 
   .cards {
@@ -143,5 +153,84 @@ h2 {
 
   .card {
     width: 90%;
+    max-width: 90%;
+  }
+
+  .right {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Small tablets (≤768px) */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .separator {
+    width: 150px;
+  }
+
+  .lead {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+/* Mobile (≤576px) */
+@media (max-width: 576px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .separator {
+    width: 120px;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+/* Extra small mobile (≤400px) */
+@media (max-width: 400px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .separator {
+    width: 100px;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 0.8rem;
   }
 }

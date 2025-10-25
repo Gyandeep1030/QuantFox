@@ -12,6 +12,7 @@ import {
   faFacebook,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -196,6 +197,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <FloatingContact/>
     </section>
   );
 };

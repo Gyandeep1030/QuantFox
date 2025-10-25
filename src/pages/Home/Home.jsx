@@ -7,6 +7,8 @@ import WhyChooseUs from "../../components/WhyChooseUS/WhyChooseUs";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import { Link } from "react-router-dom";
+import { FaPhoneAlt } from "react-icons/fa";
+import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const Home = () => {
   return (
@@ -20,6 +22,7 @@ const Home = () => {
             data-driven investment decisions and maximize their profits through
             advanced analytics and intelligent insights
           </p>
+          
           <input
             type="text"
             placeholder="Search by stock ticker or company name"
@@ -69,9 +72,15 @@ const Home = () => {
         <WhyChooseUs />
 
         <div className={styles.buttons}>
-          <Link to="/about" className={styles.aboutBtn}>More About Us</Link>
-          <Link to= "/contact" className={styles.contactBtn}>Contact Us</Link>
+          <Link to="/about" className={styles.aboutBtn}>
+            More About Us
+          </Link>
+          <Link to="/contact" className={styles.contactBtn}>
+            Contact Us
+          </Link>
         </div>
+
+        <FloatingContact/>
       </main>
     </div>
   );

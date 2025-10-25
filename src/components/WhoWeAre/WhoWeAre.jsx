@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./WhoWeAre.module.css";
 import { Link } from "react-router-dom";
+import AboutUs from "../../assets/Image/startup-about-us-01.svg";
 
 const WhoWeAre = () => {
   return (
@@ -9,33 +10,37 @@ const WhoWeAre = () => {
         <div className={styles.row}>
           {/* Left Image */}
           <div className={styles.imageWrapper}>
-            <img
-              src="https://pridecons.com/assetsweb/images/upload/startup-about-us-01.jpg"
-              alt="About Us"
-              className={styles.image}
-            />
+            <img src={AboutUs} alt="About Us" className={styles.image} />
           </div>
 
           {/* Right Content */}
           <div className={styles.contentWrapper}>
             <div className={styles.contentInner}>
-              <div className={styles.separator}></div>
+              
               <h2 className={styles.title}>Who We Are</h2>
+              <div className={styles.separator}></div>
               <p className={styles.description}>
-                Pride Trading Consultancy Pvt. Ltd. is a possibilities committed
-                to making fair, holistic, and financial recommendations accessible
-                to all traders and investors. As a trusted share trading consultant,
-                we are one of the few organizations providing research and information
-                on Indian capital markets, primarily based on Technical Analysis,
-                and we enjoy a strong reputation among investors, brokers, and researchers.
+                QuantFox LLP Pvt. Ltd. is a firm dedicated to empowering traders
+                and investors through fair, data-driven, and insightful
+                financial recommendations. As a trusted name in the share
+                trading and investment consultancy space, we specialize in
+                research and analysis of the Indian capital markets, driven
+                primarily by advanced Technical Analysis and quantitative
+                strategies.
                 <br />
                 <br />
-                Our team is skilled, with experienced analysts dedicated to helping
-                clients make informed investment decisions. Through our stock market
-                investment consultancy services, we strive for excellence in every trade.
-                We have been operating in this industry for the past seven years, under
-                the leadership of <strong>Ms. Apeksha Bansal</strong>, the founder of our
-                company and a <strong>SEBI Registered Research Analyst</strong>.
+                Our team comprises skilled and experienced market analysts
+                committed to helping clients make well-informed and confident
+                investment decisions. Through our stock market research and
+                advisory services, we aim to bring precision, transparency, and
+                consistency to every trade.
+                <br />
+                <br />
+                QuantFox continues to grow under the visionary leadership of{" "}
+                <strong>Mr. Sameer</strong>, our{" "}
+                <strong>Founder and CEO</strong>, who upholds the values of
+                compliance, integrity, and excellence across every aspect of our
+                operations.
               </p>
               <Link to="/about" className={styles.btn}>
                 More About Us

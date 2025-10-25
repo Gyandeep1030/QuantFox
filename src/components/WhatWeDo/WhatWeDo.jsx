@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./WhatWeDo.module.css";
+import { Link } from "react-router-dom";
+import InfoBox18 from "../../assets/Image/info-box-18.svg"
+import InfoBox19 from "../../assets/Image/info-box-19.svg"
+import InfoBox20 from "../../assets/Image/info-box-20.jpg"
 
 const services = [
   {
     title: "Wealth Creation",
-    img: "https://pridecons.com/assetsweb/images/upload/info-box-18.jpg",
-    bg: styles.darkOverlay,
-    btnColor: "dark",
+    img: InfoBox18,
+    overlay: styles.darkOverlay,
   },
   {
     title: "Value Research",
-    img: "https://pridecons.com/assetsweb/images/upload/info-box-19.jpg",
-    bg: styles.redOverlay,
-    btnColor: "light",
+    img: InfoBox19,
+    overlay: styles.darkOverlay,
   },
   {
     title: "Other Services",
-    img: "https://pridecons.com/assetsweb/images/upload/info-box-20.jpg",
-    bg: styles.blackOverlay,
-    btnColor: "primary",
+    img: InfoBox20,
+    overlay: styles.blackOverlay,
   },
 ];
 
@@ -27,28 +28,30 @@ const WhatWeDo = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.separator}></div>
           <h2>What We Do</h2>
+          <div className={styles.separator}></div>
           <p>
             Our goal is to enhance the value of your investment by deploying
-            research-driven strategies.
+            research-driven strategies and data-backed insights that empower you
+            to make smarter financial decisions.
           </p>
         </div>
 
         <div className={styles.cards}>
           {services.map((service, index) => (
             <div key={index} className={styles.card}>
-              <img src={service.img} alt={service.title} className={styles.cardImg} />
-              <div className={`${styles.cardOverlay} ${service.bg}`}>
+              <img
+                src={service.img}
+                alt={service.title}
+                className={styles.cardImg}
+              />
+              <div className={`${styles.cardOverlay} ${service.overlay}`}>
                 <div className={styles.cardContent}>
                   <h5>{service.title}</h5>
                   <div className={styles.btnGroup}>
-                    <a href="#" className={`${styles.btn} ${styles.btnDark}`}>
-                      More details
-                    </a>
-                    <a href="#" className={`${styles.iconBtn}`}>
-                      <i className="fas fa-paper-plane"></i>
-                    </a>
+                    <Link to="/services" className={styles.btn}>
+                      More Details
+                    </Link>
                   </div>
                 </div>
               </div>

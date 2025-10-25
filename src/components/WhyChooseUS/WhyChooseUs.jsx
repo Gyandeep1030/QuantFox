@@ -1,14 +1,17 @@
 import React from "react";
 import styles from "./WhyChooseUs.module.css";
+import { Link } from "react-router-dom";
+import WhyUsImg from '../../assets/Image/why-us-img.png';
 
 const WhyChooseUs = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        {/* LEFT CONTENT */}
         <div className={styles.left}>
           <div className={styles.headingBlock}>
+            <h2 className={styles.heading}>Why Choose Us</h2>
             <div className={styles.separator}></div>
-            <h2>Why Choose Us</h2>
             <p className={styles.lead}>
               Transparency — At QuantFox LLP, we believe in transparent
               services rather than hiding anything.
@@ -17,15 +20,8 @@ const WhyChooseUs = () => {
 
           <div className={styles.cards}>
             {/* Card 1 */}
-            <div
-              className={`${styles.card} ${styles.cardPrimary}`}
-              style={{
-                backgroundImage:
-                  "url('https://pridecons.com/assetsweb/images/upload/service-card-box-07.png')",
-              }}
-            >
+            <div className={`${styles.card} ${styles.cardPrimary}`}>
               <div className={styles.cardHeader}>
-                <i className="far fa-lightbulb"></i>
                 <span>Innovation</span>
               </div>
               <div className={styles.cardBody}>
@@ -35,21 +31,14 @@ const WhyChooseUs = () => {
                   latest opportunities.
                 </p>
                 <a href="#" className={styles.moreLink}>
-                  <i className="fas fa-long-arrow-alt-right"></i> More information
+                  More information
                 </a>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div
-              className={`${styles.card} ${styles.cardRed}`}
-              style={{
-                backgroundImage:
-                  "url('https://pridecons.com/assetsweb/images/upload/service-card-box-08.png')",
-              }}
-            >
+            <div className={`${styles.card} ${styles.cardRed}`}>
               <div className={styles.cardHeader}>
-                <i className="fas fa-dollar-sign"></i>
                 <span>Affordable Pricing</span>
               </div>
               <div className={styles.cardBody}>
@@ -57,17 +46,18 @@ const WhyChooseUs = () => {
                   At QuantFox, you will get world-class financial insights and
                   services at affordable pricing.
                 </p>
-                <a href="#" className={styles.moreLink}>
-                  <i className="fas fa-long-arrow-alt-right"></i> More information
-                </a>
+                <Link to="/checkout" className={styles.moreLink}>
+                  More information
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
+        {/* RIGHT IMAGE */}
         <div className={styles.right}>
           <img
-            src="https://pridecons.com/assetsweb/images/upload/startup-why-us-img.png"
+            src={WhyUsImg}
             alt="Why Choose Us"
             className={styles.image}
           />
