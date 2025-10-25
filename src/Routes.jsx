@@ -8,6 +8,7 @@ import Company from "./pages/Company/Company";
 import Checkout from "./components/Payment/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 const Routes = () => {
 
@@ -23,6 +24,10 @@ const Routes = () => {
         { 
             path: "about", 
             element: <About /> 
+        },
+        { 
+            path: "contact", 
+            element: <Contact /> 
         },
         { 
             path: "services", 
