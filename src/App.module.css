@@ -1,5 +1,4 @@
 
-
 .appContainer {
   background: var(--bg);
   color: white;
@@ -11,7 +10,7 @@
 .mainContent {
   flex: 1;
   padding: 20px;
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   margin: 0 auto;
   width: 100%;
 }

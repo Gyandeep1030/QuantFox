@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Company from "./pages/Company/Company";
 import Checkout from "./components/Payment/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
+import About from './pages/About/About';
 
 const Routes = () => {
 
@@ -18,6 +19,10 @@ const Routes = () => {
         { 
             index: true, 
             element: <Home /> 
+        },
+        { 
+            path: "about", 
+            element: <About /> 
         },
         { 
             path: "services", 

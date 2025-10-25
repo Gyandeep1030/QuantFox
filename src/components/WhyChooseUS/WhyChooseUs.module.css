@@ -1,0 +1,147 @@
+.section {
+  padding: 4rem 1rem;
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- LEFT CONTENT ---------- */
+.left {
+  flex: 1 1 500px;
+}
+
+.headingBlock {
+  margin-bottom: 2rem;
+}
+
+.separator {
+  width: 100px;
+  height: 4px;
+  background: red;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 500px;
+}
+
+/* ---------- CARDS ---------- */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 0, 0, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.cardHeader i {
+  font-size: 1.3rem;
+  color: red;
+}
+
+.cardBody p {
+  font-size: 0.95rem;
+  color: #f2f2f2;
+  line-height: 1.5;
+}
+
+.moreLink {
+  display: inline-block;
+  color: #ff4d4d;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.moreLink:hover {
+  color: white;
+}
+
+.cardPrimary {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.cardRed {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* ---------- RIGHT IMAGE ---------- */
+.right {
+  flex: 1 1 400px;
+  text-align: right;
+}
+
+.image {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .right {
+    text-align: center;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .separator {
+    margin: 0 auto 1rem;
+  }
+
+  .cards {
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

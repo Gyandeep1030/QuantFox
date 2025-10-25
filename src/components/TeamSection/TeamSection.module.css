@@ -1,0 +1,55 @@
+.team {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.team span {
+  color: red;
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 230px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: red;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid red;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: red;
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .members {
+    flex-direction: column;
+    align-items: center;
+  }
+}

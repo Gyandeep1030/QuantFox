@@ -6,9 +6,11 @@
   border-bottom: 1px solid var(--border);
   padding: 1rem 2rem;
   color: #fff;
+  position: relative;
+  z-index: 1000;
 }
 
-/* ---------- LEFT (Logo) ---------- */
+/* ---------- LEFT ---------- */
 .left {
   display: flex;
   align-items: center;
@@ -31,17 +33,14 @@
   color: var(--muted);
 }
 
-
 .logo h1 span {
   font-weight: 300;
   color: red;
 }
 
-
 .icon {
   width: 32px;
   height: 32px;
-  color: var(--accent);
 }
 
 /* ---------- RIGHT (Nav Links) ---------- */
@@ -49,6 +48,7 @@
   display: flex;
   align-items: center;
   gap: 1.8rem;
+  transition: all 0.3s ease;
 }
 
 .right a {
@@ -69,7 +69,6 @@
   padding-bottom: 4px;
 }
 
-
 /* ---------- MENU BUTTON ---------- */
 .menuBtn {
   display: none;
@@ -78,15 +77,50 @@
   color: white;
   border-radius: var(--radius);
   padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ---------- RESPONSIVE ---------- */
+.menuBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- MOBILE NAV ---------- */
 @media (max-width: 768px) {
+  .right {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    transform: translateY(-10%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  /* When menu is open */
+  .open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
   .right a {
-    display: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .menuBtn {
     display: block;
+    z-index: 1100;
   }
 }
