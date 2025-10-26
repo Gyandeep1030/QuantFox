@@ -42,7 +42,7 @@ const Routes = () => {
             element: <Company /> 
         },
         { 
-            path: "checkout", 
+            path: "plans", 
             element: <Checkout /> 
         },
         { 

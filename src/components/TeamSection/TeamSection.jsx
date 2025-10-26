@@ -15,18 +15,6 @@ const TeamSection = () => {
           <h3>Sameer</h3>
           <p>CEO & Founder</p>
         </div>
-
-        <div className={styles.card}>
-          {/* <img src={cto} alt="CTO" /> */}
-          <h3>Tanmay kumar</h3>
-          <p>CTO & Lead Developer</p>
-        </div>
-
-        <div className={styles.card}>
-          {/* <img src={analyst} alt="Analyst" /> */}
-          <h3>Priya Sharma</h3>
-          <p>Senior Market Analyst</p>
-        </div>
       </div>
     </section>
   );

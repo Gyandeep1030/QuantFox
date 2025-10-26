@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className={styles.logo}>
           <img className={styles.icon} src={logo} alt="QuantFox logo" />
           <h1>
-            Quant<span>Fox</span> - <strong>LLP</strong>
+            Quant<span>Fox</span>
           </h1>
         </div>
       </div>
@@ -26,18 +26,20 @@ const Navbar = () => {
         <NavLink to="/" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
           Home
         </NavLink>
+        <NavLink to="/plans" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
+          Plans
+        </NavLink>
+        <NavLink to="/services" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
+          Services
+        </NavLink>
         <NavLink to="/about" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
           About
         </NavLink>
         <NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
           Contact
         </NavLink>
-        <NavLink to="/services" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
-          Services
-        </NavLink>
-        <NavLink to="/checkout" onClick={closeMenu} className={({ isActive }) => (isActive ? styles.active : "")}>
-          Premium
-        </NavLink>
+        
+        
       </nav>
 
       {/* ---------- MENU BUTTON ---------- */}

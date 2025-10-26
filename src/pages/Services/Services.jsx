@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Services.module.css";
+import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const Services = () => {
   const services = [
@@ -19,6 +20,7 @@ const Services = () => {
           </div>
         ))}
       </div>
+      <FloatingContact/>
     </div>
   );
 };

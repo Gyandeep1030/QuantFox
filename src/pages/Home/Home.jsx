@@ -73,7 +73,7 @@ const Home = () => {
 
         <div className={styles.buttons}>
           <Link to="/about" className={styles.aboutBtn}>
-            More About Us
+            About Us
           </Link>
           <Link to="/contact" className={styles.contactBtn}>
             Contact Us

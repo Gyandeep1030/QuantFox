@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Checkout.module.css";
+import FloatingContact from "../FloatingContact/FloatingContact";
 
 const Checkout = () => {
   const startPayment = async () => {
@@ -18,6 +19,7 @@ const Checkout = () => {
         <p>Future-ready payment flow. Add your provider SDK and backend endpoints to complete.</p>
         <button onClick={startPayment} className={styles.btn}>Start Payment (Placeholder)</button>
       </div>
+      <FloatingContact/>
     </div>
   );
 };

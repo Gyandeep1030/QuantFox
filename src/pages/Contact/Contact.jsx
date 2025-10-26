@@ -47,7 +47,7 @@ const Contact = () => {
     <section className={styles.contactSection}>
       {/* Header */}
       <div className={styles.headerContainer}>
-        <p className={styles.title}>Contact QuantFox LLP</p>
+        <p className={styles.title}>Contact Quant<span>Fox</span></p>
         <div className={styles.separator}></div>
         <p className={styles.subtitle}>
           We’d love to hear from you! Please fill out the form below or reach us
@@ -135,23 +135,23 @@ const Contact = () => {
                 <div className={styles.addressRow}>
                   <span className={styles.label}>Address Line:</span>
                   <span className={styles.value}>
-                    123, Quantum Tower, Sector 62
+                    9, Kotla Vihar Phase II
                   </span>
                 </div>
 
                 <div className={styles.addressRow}>
-                  <span className={styles.label}>City:</span>
-                  <span className={styles.value}>Noida</span>
+                  <span className={styles.label}>State/City:</span>
+                  <span className={styles.value}>Delhi / New Delhi</span>
                 </div>
 
                 <div className={styles.addressRow}>
-                  <span className={styles.label}>State:</span>
-                  <span className={styles.value}>Uttar Pradesh</span>
+                  <span className={styles.label}>Country:</span>
+                  <span className={styles.value}>India</span>
                 </div>
 
                 <div className={styles.addressRow}>
                   <span className={styles.label}>Pincode:</span>
-                  <span className={styles.value}>201301</span>
+                  <span className={styles.value}>110043</span>
                 </div>
               </div>
             </section>

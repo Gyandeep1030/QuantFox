@@ -20,7 +20,7 @@ const WhoWeAre = () => {
               <h2 className={styles.title}>Who We Are</h2>
               <div className={styles.separator}></div>
               <p className={styles.description}>
-                QuantFox LLP Pvt. Ltd. is a firm dedicated to empowering traders
+                QuantFox Pvt. Ltd. is a firm dedicated to empowering traders
                 and investors through fair, data-driven, and insightful
                 financial recommendations. As a trusted name in the share
                 trading and investment consultancy space, we specialize in
@@ -38,7 +38,7 @@ const WhoWeAre = () => {
                 <br />
                 QuantFox continues to grow under the visionary leadership of{" "}
                 <strong>Mr. Sameer</strong>, our{" "}
-                <strong>Founder and CEO</strong>, who upholds the values of
+                <strong>Co-Founder and CEO</strong>, who upholds the values of
                 compliance, integrity, and excellence across every aspect of our
                 operations.
               </p>

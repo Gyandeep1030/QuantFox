@@ -12,7 +12,8 @@ import { FaWallet } from "react-icons/fa";
 const About = () => {
   return (
     <>
-    <h1 className={styles.aboutH1}>About QuantFox</h1>
+    <h1 className={styles.aboutH1}>About Quant<span>Fox</span></h1>
+    <div className={styles.separator}></div>
       <section className={styles.hero}>
         <div className={styles.content}>
           

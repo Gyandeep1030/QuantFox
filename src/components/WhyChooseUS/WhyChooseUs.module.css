@@ -30,17 +30,18 @@
 }
 
 .separator {
-  /* width:; */
+  width:250px;
   height: 4px;
   background: red;
-  /* margin: 0 auto; Centered separator under heading */
+  margin: 0 auto; 
 }
 
 .lead {
   font-size: 1.1rem;
   color: #ccc;
-  max-width: 500px;
+  max-width: 650px;
   line-height: 1.5;
+  margin-top: 20px;
 }
 
 /* ---------- CARDS ---------- */
@@ -139,7 +140,7 @@
   }
 
   .separator {
-    width: 180px;
+    width: 200px;
     margin: 0 auto 1rem;
   }
 
@@ -169,7 +170,7 @@
   }
 
   .separator {
-    width: 150px;
+    width: 240px;
   }
 
   .lead {
@@ -194,7 +195,7 @@
   }
 
   .separator {
-    width: 120px;
+    width: 150px;
   }
 
   .lead {
@@ -223,7 +224,7 @@
   }
 
   .separator {
-    width: 100px;
+    width: 120px;
   }
 
   .lead {
