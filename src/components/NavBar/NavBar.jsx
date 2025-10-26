@@ -45,7 +45,7 @@ const Navbar = () => {
       {/* ---------- MENU BUTTON ---------- */}
       <button className={styles.menuBtn} onClick={toggleMenu}>
         <span className="material-symbols-outlined">
-          {isMenuOpen ? "close" : "menu"}
+          {isMenuOpen ? "Close" : "Menu"}
         </span>
       </button>
     </header>

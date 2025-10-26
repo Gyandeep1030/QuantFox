@@ -9,14 +9,14 @@
       rgba(229, 9, 20, 0.3) 55%,
       rgba(0, 0, 0, 0.9) 100%
     );
-  color: white;
+  color: #fff;
   min-height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem 1rem;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .content {
@@ -24,22 +24,23 @@
 }
 
 .aboutH1 {
-  color: white;
-  font-size: 2.3rem;
+  color: #fff;
+  font-size: 2.6rem;
   font-weight: 800;
   text-align: center;
-  padding: 0.1rem 0;
+  padding: 1rem 0 0.2rem;
+  letter-spacing: 0.5px;
 }
 
-.aboutH1 span{
-  color: red;
+.aboutH1 span {
+  color: #e50914;
 }
 
 .separator {
-  width: 300px;
-  height: 2px;
-  background: red;
-  margin: 0 auto 1rem;
+  width: 280px;
+  height: 3px;
+  background: #e50914;
+  margin: 0 auto 2rem;
   border-radius: 2px;
 }
 
@@ -47,17 +48,18 @@
 .hero button {
   background: #e50914;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.9rem 2rem;
   border-radius: 8px;
-  color: white;
-  margin-top: 1rem;
+  color: #fff;
+  margin-top: 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .hero button:hover {
   background: #ff4d4d;
+  transform: translateY(-2px);
 }
 
 /* ===============================
@@ -69,12 +71,13 @@
   padding: 5rem 1rem;
   display: flex;
   justify-content: center;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
+  margin: auto;
 }
 
 /* ===============================
@@ -85,7 +88,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 /* -------------------------------
@@ -103,6 +106,7 @@
   margin-bottom: 3rem;
   border-left: 5px solid #e50914;
   padding-left: 1rem;
+  line-height: 1.2;
 }
 
 /* Icon Info */
@@ -112,15 +116,21 @@
   margin-bottom: 2.5rem;
 }
 
+.icon {
+  flex-shrink: 0;
+}
+
 .iconMain {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
+  color: #e50914;
   filter: drop-shadow(0 0 6px #e50914);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .iconMain:hover {
   transform: scale(1.08);
+  filter: drop-shadow(0 0 10px #ff4d4d);
 }
 
 .text {
@@ -131,7 +141,7 @@
   color: #e50914;
   font-weight: 700;
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .text p {
@@ -147,15 +157,16 @@
   flex: 1 1 45%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .image {
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   border-radius: 16px;
   background: #111;
   padding: 20px;
-  box-shadow: 0 0 25px rgba(229, 9, 20, 0.2);
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.25);
   animation: fadeInUp 1s ease both;
 }
 
@@ -165,7 +176,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -184,20 +195,7 @@
   }
 
   .image {
-    max-width: 480px;
-  }
-
-  .icon img {
-    width: 55px;
-    height: 55px;
-  }
-
-  .text h5 {
-    font-size: 1.05rem;
-  }
-
-  .text p {
-    font-size: 0.92rem;
+    max-width: 450px;
   }
 }
 
@@ -208,7 +206,7 @@
   }
 
   .image {
-    max-width: 450px;
+    max-width: 420px;
   }
 }
 
@@ -253,11 +251,15 @@
 
 /* Small tablets ≤ 768px */
 @media (max-width: 768px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
   .title {
     font-size: 1.8rem;
   }
 
-  .icon img {
+  .iconMain {
     width: 50px;
     height: 50px;
   }
@@ -271,23 +273,28 @@
   }
 
   .image {
-    max-width: 350px;
+    max-width: 340px;
   }
 }
 
 /* Mobile ≤ 576px */
 @media (max-width: 576px) {
-  .section {
-    padding: 3rem 1rem;
+  .aboutH1 {
+    font-size: 1.9rem;
   }
 
-  .title {
-    font-size: 1.6rem;
+  .separator {
+    width: 200px;
+  }
+
+  .section {
+    padding: 3.5rem 1rem;
   }
 
   .iconInfo {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .text {
@@ -299,25 +306,19 @@
     max-width: 300px;
   }
 
-  .icon img {
-    width: 45px;
-    height: 45px;
-  }
-
-  .text h5 {
-    font-size: 0.95rem;
-  }
-
-  .text p {
-    font-size: 0.85rem;
+  .title {
+    font-size: 1.6rem;
   }
 }
 
 /* Extra small mobile ≤ 400px */
 @media (max-width: 400px) {
   .aboutH1 {
-    font-size: 1.3rem;
-    width: 40%;
+    font-size: 1.5rem;
+  }
+
+  .separator {
+    width: 150px;
   }
 
   .title {
@@ -327,11 +328,6 @@
 
   .image {
     max-width: 250px;
-  }
-
-  .icon img {
-    width: 40px;
-    height: 40px;
   }
 
   .text h5 {
