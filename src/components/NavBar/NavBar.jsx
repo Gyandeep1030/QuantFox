@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./NavBar.module.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -13,12 +13,12 @@ const Navbar = () => {
     <header className={styles.header}>
       {/* ---------- LEFT (Logo) ---------- */}
       <div className={styles.left}>
-        <div className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <img className={styles.icon} src={logo} alt="QuantFox logo" />
           <h1>
             Quant<span>Fox</span>
           </h1>
-        </div>
+        </Link>
       </div>
 
       {/* ---------- RIGHT (Nav Links) ---------- */}

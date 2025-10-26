@@ -1,35 +1,96 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EnquiryForm.module.css";
+import { sendEmail } from "../../assets/emailService";
 
 const EnquiryForm = ({ onClose }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await sendEmail(formData);
+      if (res.success) {
+        alert("✅ Email sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        onClose();
+      } else {
+        alert("❌ Failed to send email. Please try again later.");
+      }
+    } catch (error) {
+      alert("⚠️ Something went wrong. Please try again later.");
+      console.error(error);
+    }
+    setLoading(false);
+  };
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <h2>Consultation Inquiry</h2>
-        <form>
+        <h2>Enquiry Form</h2>
+        <form onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label>Name</label>
-            <input type="text" placeholder="Enter your name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className={styles.formGroup}>
             <label>Email</label>
-            <input type="email" placeholder="Enter your email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className={styles.formGroup}>
             <label>Phone</label>
-            <input type="tel" placeholder="Enter your phone number" required />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              value={formData.phone}
+              onChange={handleChange}
+            />
           </div>
 
           <div className={styles.formGroup}>
             <label>Message</label>
-            <textarea placeholder="Tell us about your inquiry..." rows="3" />
+            <textarea
+              name="message"
+              placeholder="Tell us about your inquiry..."
+              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className={styles.buttons}>
-            <button type="submit" className={styles.submitBtn}>
-              Submit
+            <button type="submit" className={styles.submitBtn} disabled={loading}>
+              {loading ? "Sending..." : "Submit"}
             </button>
             <button type="button" onClick={onClose} className={styles.cancelBtn}>
               Cancel

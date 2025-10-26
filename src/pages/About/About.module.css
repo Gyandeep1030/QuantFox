@@ -123,8 +123,7 @@
 .iconMain {
   width: 55px;
   height: 55px;
-  color: #e50914;
-  filter: drop-shadow(0 0 6px #e50914);
+  filter: drop-shadow(0 0 6px #de6d74);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 

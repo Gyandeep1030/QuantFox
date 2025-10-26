@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import Quantfox from "../../assets/Quantfox.png";
+import QuantfoxLogo from "../../assets/Quantfox-logo.png";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp   } from "react-icons/fa";
 
@@ -10,7 +11,7 @@ const Footer = () => (
       {/* ---- Brand Section ---- */}
       <div className={styles.brand}>
         <div className={styles.logo}>
-          <img src={Quantfox} alt="Quantfox LLP Logo" />
+          <img src={QuantfoxLogo} alt="Quantfox LLP Logo" />
           <h2>
             Quant<span>Fox</span>
           </h2>

@@ -1,108 +1,153 @@
+/* ================================
+   OVERLAY
+=================================== */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;              /* fully black background */
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 20000;
   animation: fadeIn 0.3s ease-in-out;
+  padding: 1rem;
 }
 
+/* ================================
+   MODAL CARD
+=================================== */
 .modal {
-  background: #0b0b0b;
-  color: white;
-  border: 2px solid #ff3c00;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 90%;
-  max-width: 450px;
-  box-shadow: 0 0 30px rgba(255, 60, 0, 0.4);
-  animation: popUp 0.4s ease-in-out;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1.5px solid rgba(255, 60, 0, 0.6);
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  width: 100%;
+  max-width: 480px;
+  color: #fff;
+  box-shadow: 0 0 35px rgba(255, 60, 0, 0.4);
+  backdrop-filter: blur(12px);
+  animation: popUp 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-h2 {
+.modal::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 60, 0, 0.15), transparent 70%);
+  z-index: 0;
+  transform: rotate(25deg);
+}
+
+.modal h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
   color: #ff3c00;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 12px rgba(255, 60, 0, 0.4);
 }
 
+/* ================================
+   FORM FIELDS
+=================================== */
 .formGroup {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 label {
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   font-size: 0.9rem;
+  color: #ddd;
 }
 
 input,
 textarea {
-  padding: 0.6rem;
+  padding: 0.75rem;
   border: 1px solid #333;
-  border-radius: 6px;
-  background: #1b1b1b;
-  color: white;
-  font-size: 0.9rem;
+  border-radius: 8px;
+  background: rgba(25, 25, 25, 0.9);
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
   border-color: #ff3c00;
   outline: none;
+  background: rgba(40, 40, 40, 0.95);
+  box-shadow: 0 0 10px rgba(255, 60, 0, 0.3);
 }
 
+/* ================================
+   BUTTONS
+=================================== */
 .buttons {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.submitBtn,
+.cancelBtn {
+  flex: 1;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .submitBtn {
-  flex: 1;
-  background: #ff3c00;
-  color: white;
+  background: linear-gradient(135deg, #ff3c00, #ff6a00);
+  color: #fff;
   border: none;
-  padding: 0.7rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.3);
 }
 
 .submitBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(255, 60, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 60, 0, 0.5);
 }
 
 .cancelBtn {
-  flex: 1;
   background: transparent;
-  border: 1px solid #ff3c00;
+  border: 1.5px solid #ff3c00;
   color: #ff3c00;
-  padding: 0.7rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .cancelBtn:hover {
   background: #ff3c00;
   color: #fff;
+  transform: translateY(-2px);
 }
 
-/* Animations */
+/* ================================
+   ANIMATIONS
+=================================== */
 @keyframes popUp {
   from {
-    transform: scale(0.8);
+    transform: scale(0.85);
     opacity: 0;
   }
   to {
@@ -117,5 +162,72 @@ textarea:focus {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+=================================== */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .modal {
+    padding: 1.8rem;
+    max-width: 420px;
+  }
+
+  .modal h2 {
+    font-size: 1.4rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .submitBtn,
+  .cancelBtn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+/* Mobile ≤ 576px */
+@media (max-width: 576px) {
+  .modal {
+    padding: 1.5rem;
+    max-width: 90%;
+    border-radius: 12px;
+  }
+
+  .modal h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .submitBtn,
+  .cancelBtn {
+    width: 100%;
+  }
+}
+
+/* Extra Small ≤ 400px */
+@media (max-width: 400px) {
+  .modal {
+    padding: 1.2rem;
+  }
+
+  .modal h2 {
+    font-size: 1.1rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.85rem;
   }
 }

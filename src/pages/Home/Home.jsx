@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
 import StockTicker from "../../components/StockTicker/StockTicker";
-import MarketTable from "../../components/MarketTable/MarketTable";
 import mockStocks from "../../api/mockStocks";
 import WhyChooseUs from "../../components/WhyChooseUS/WhyChooseUs";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";

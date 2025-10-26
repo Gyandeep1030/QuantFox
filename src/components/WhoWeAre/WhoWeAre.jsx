@@ -20,7 +20,7 @@ const WhoWeAre = () => {
               <h2 className={styles.title}>Who We Are</h2>
               <div className={styles.separator}></div>
               <p className={styles.description}>
-                QuantFox Pvt. Ltd. is a firm dedicated to empowering traders
+                QuantFox LLP is a firm dedicated to empowering traders
                 and investors through fair, data-driven, and insightful
                 financial recommendations. As a trusted name in the share
                 trading and investment consultancy space, we specialize in
