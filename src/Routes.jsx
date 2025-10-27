@@ -3,8 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home/Home";
 import Services from "./pages/Services/Services";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Company from "./pages/Company/Company";
 import Checkout from "./components/Payment/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import About from './pages/About/About';
@@ -32,14 +30,6 @@ const Routes = () => {
         { 
             path: "services", 
             element: <Services /> 
-        },
-        { 
-            path: "dashboard/*", 
-            element: <Dashboard /> 
-        },
-        { 
-            path: "company/:symbol", 
-            element: <Company /> 
         },
         { 
             path: "plans", 

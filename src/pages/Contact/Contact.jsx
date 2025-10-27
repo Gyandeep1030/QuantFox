@@ -4,15 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faPhone,
-  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faLinkedin,
   faFacebook,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 import { FaHome } from "react-icons/fa";
+import FloatingContact from "../../components/FloatingContact/FloatingContact";
+import { sendEmail } from "../../assets/emailService"; // ✅ using your existing service
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +22,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -31,23 +32,35 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message sent successfully!");
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      address: "",
-      message: "",
-    });
+    setLoading(true);
+
+    try {
+      await sendEmail(formData);
+
+      alert("✅ Message sent successfully!");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("❌ Failed to send message. Please try again later.");
+    }
+
+    setLoading(false);
   };
 
   return (
     <section className={styles.contactSection}>
       {/* Header */}
       <div className={styles.headerContainer}>
-        <p className={styles.title}>Contact Quant<span>Fox</span></p>
+        <p className={styles.title}>
+          Contact Quant<span>Fox</span>
+        </p>
         <div className={styles.separator}></div>
         <p className={styles.subtitle}>
           We’d love to hear from you! Please fill out the form below or reach us
@@ -61,18 +74,16 @@ const Contact = () => {
         <div className={styles.leftColumn}>
           <h2 className={styles.sectionHeading}>Get in Touch Directly</h2>
           <div className={styles.linksContainer}>
-            {/* Email */}
-            <a className={styles.contactLink} href="mailto:quantfox7@gmail.com">
+            <a className={styles.contactLink} href="mailto:helpdesk@quantfox.in">
               <div className={styles.linkContent}>
                 <div className={styles.iconWrapper}>
                   <FontAwesomeIcon icon={faEnvelope} size="lg" />
                 </div>
-                <p className={styles.contactText}>quantfox7@gmail.com</p>
+                <p className={styles.contactText}>helpdesk@quantfox.in</p>
               </div>
               <button className={styles.linkButton}>Email</button>
             </a>
 
-            {/* Phone Numbers */}
             <a className={styles.contactLink} href="tel:+919311728534">
               <div className={styles.linkContent}>
                 <div className={styles.iconWrapper}>
@@ -93,7 +104,6 @@ const Contact = () => {
               <button className={styles.linkButton}>Call</button>
             </a>
 
-            {/* Social Links */}
             <a
               className={styles.contactLink}
               href="https://www.facebook.com/profile.php?id=61582559970439"
@@ -124,7 +134,6 @@ const Contact = () => {
               <button className={styles.linkButton}>Follow</button>
             </a>
 
-            {/* Address Section */}
             <section className={styles.addressSection}>
               <div className={styles.addressHeader}>
                 <FaHome className={styles.homeIcon} />
@@ -134,9 +143,7 @@ const Contact = () => {
               <div className={styles.addressContainer}>
                 <div className={styles.addressRow}>
                   <span className={styles.label}>Address Line:</span>
-                  <span className={styles.value}>
-                    9, Kotla Vihar Phase II
-                  </span>
+                  <span className={styles.value}>9, Kotla Vihar Phase II</span>
                 </div>
 
                 <div className={styles.addressRow}>
@@ -194,7 +201,7 @@ const Contact = () => {
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="+91 98765 43210"
+                placeholder="+91 96548 25156"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -224,8 +231,8 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Send Message
+            <button type="submit" className={styles.submitButton} disabled={loading}>
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

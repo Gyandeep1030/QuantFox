@@ -58,7 +58,7 @@ const Footer = () => (
       <div className={styles.contact}>
         <h4>Contact Us</h4>
         <p>
-          Email: <a href="mailto:quantfox7@gmail.com">quantfox7@gmail.com</a>
+          Email: <a href="mailto:helpdesk@quantfox.in">helpdesk@quantfox.in</a>
         </p>
         <p>
           Phone:{" "}

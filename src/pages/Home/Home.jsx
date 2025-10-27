@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import StockTicker from "../../components/StockTicker/StockTicker";
 import mockStocks from "../../api/mockStocks";
@@ -6,10 +6,10 @@ import WhyChooseUs from "../../components/WhyChooseUS/WhyChooseUs";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import { Link } from "react-router-dom";
-import { FaPhoneAlt } from "react-icons/fa";
 import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const Home = () => {
+
   return (
     <div>
       <StockTicker items={mockStocks.slice(0, 8)} />

@@ -7,9 +7,9 @@ const EnquiryForm = ({ onClose }) => {
     name: "",
     email: "",
     phone: "",
+    address: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -21,17 +21,19 @@ const EnquiryForm = ({ onClose }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await sendEmail(formData);
-      if (res.success) {
-        alert("✅ Email sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        onClose();
-      } else {
-        alert("❌ Failed to send email. Please try again later.");
-      }
+      await sendEmail(formData);
+      alert("✅ Email sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        message: "",
+      });
+      onClose();
     } catch (error) {
-      alert("⚠️ Something went wrong. Please try again later.");
-      console.error(error);
+      console.error("Email sending failed:", error);
+      alert("❌ Failed to send email. Please try again later.");
     }
     setLoading(false);
   };
@@ -72,6 +74,17 @@ const EnquiryForm = ({ onClose }) => {
               name="phone"
               placeholder="Enter your phone number"
               value={formData.phone}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label>Address</label>
+            <input
+              type="text"
+              name="address"
+              placeholder="Enter your full address"
+              value={formData.address}
               onChange={handleChange}
             />
           </div>
