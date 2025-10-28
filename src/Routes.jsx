@@ -3,10 +3,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home/Home";
 import Services from "./pages/Services/Services";
-import Checkout from "./components/Payment/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Plans from './pages/Plans/Plans';
 
 const Routes = () => {
 
@@ -33,7 +33,7 @@ const Routes = () => {
         },
         { 
             path: "plans", 
-            element: <Checkout /> 
+            element: <Plans /> 
         },
         { 
             path: "*", 

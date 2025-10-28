@@ -7,14 +7,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 20000;
   animation: fadeIn 0.3s ease-in-out;
-  padding: 1rem;
+  padding: 2rem 1rem; /* 👈 Added vertical space (gap from top & bottom) */
+  overflow-y: auto;
 }
 
 /* ================================
@@ -33,6 +34,7 @@
   animation: popUp 0.4s ease;
   position: relative;
   overflow: hidden;
+  margin: auto; /* Centers vertically if content taller than viewport */
 }
 
 .modal::before {
@@ -195,6 +197,10 @@ textarea:focus {
 
 /* Mobile ≤ 576px */
 @media (max-width: 576px) {
+  .overlay {
+    padding: 1.5rem 1rem; /* 👈 Ensures spacing on small screens */
+  }
+
   .modal {
     padding: 1.5rem;
     max-width: 90%;

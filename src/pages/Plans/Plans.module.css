@@ -1,0 +1,287 @@
+.main {
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #221111; */
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+
+.hero span{
+  color: red;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  color: #c89292;
+  font-size: 1rem;
+}
+
+/* Plans Grid */
+.plansGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+@media (min-width: 768px) {
+  .plansGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plansGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Plan Card */
+.planCard {
+  background: #331a1a;
+  border: 1px solid #663333;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  position: relative;
+  height: 450px;
+}
+
+.planCard:hover {
+  transform: translateY(-6px);
+}
+
+.highlight {
+  border: 2px solid #ea2a2a;
+}
+
+.popularTag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ea2a2a;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.planHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 0.4rem;
+}
+
+.priceValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: red;
+}
+
+.pricePeriod {
+  font-size: 0.9rem;
+  color: #c89292;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.features span {
+  color: #ea2a2a;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+  margin-top: auto;
+  height: 2.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: #ea2a2a;
+  color: #fff;
+  border: none;
+}
+
+.primaryBtn:hover {
+  background: #c92424;
+}
+
+.secondaryBtn {
+  background: #472424;
+  color: #fff;
+  border: none;
+}
+
+.secondaryBtn:hover {
+  background: #5a2c2c;
+}
+
+/* FAQ Section */
+.faqSection {
+  margin-top: 5rem;
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
+}
+
+.faqSection h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background: #331a1a;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.faqItem summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.faqItem summary span {
+  transition: transform 0.3s ease;
+}
+
+.faqItem[open] summary span {
+  transform: rotate(180deg);
+}
+
+.faqItem p {
+  margin-top: 0.8rem;
+  color: #c89292;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Contact Section */
+.contactSection {
+  margin-top: 5rem;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.contactSection span{
+  color: red;
+}
+
+.contactSection h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contactSection p {
+  color: rgb(194, 54, 54);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.contactBtns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.callBtn,
+.msgBtn {
+  background: #472424;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.callBtn:hover,
+.msgBtn:hover {
+  background: #ea2a2a;
+  color: #fff;
+}
+
+/* Responsive Text Scaling */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .priceValue {
+    font-size: 1.7rem;
+  }
+  .contactSection h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .contactSection {
+    padding: 1.5rem 1rem;
+  }
+}
