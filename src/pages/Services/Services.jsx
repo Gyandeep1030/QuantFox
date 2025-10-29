@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Services.module.css";
 import { Link } from "react-router-dom";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const services = [
   {
@@ -28,70 +27,96 @@ const services = [
 
 const plans = [
   {
-    name: "Basic Plan",
+    name: "Basic",
     desc: "Ideal for beginners who want to explore market insights and build a foundation in investment knowledge.",
-    price: "₹2499/3 month",
+    price: "₹2499 / 3 months",
   },
   {
-    name: "Premium Plan",
+    name: "Premium",
     desc: "Get advanced analytics, personalized recommendations, and direct access to our expert advisors.",
     price: "20% commission on profit",
   },
   {
-    name: "Enterprise Plan",
+    name: "QuantFox Black Enterprise",
     desc: "Tailored for corporates and serious investors needing deep research, risk analysis, and 24/7 consultation.",
     price: "Custom Pricing",
   },
 ];
 
 const Services = () => {
+  const [openService, setOpenService] = useState(null);
+  const [openPlan, setOpenPlan] = useState(null);
+
+  const toggleService = (index) => {
+    setOpenService(openService === index ? null : index);
+  };
+
+  const togglePlan = (index) => {
+    setOpenPlan(openPlan === index ? null : index);
+  };
+
   return (
     <main className={styles.main}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>
-          Expert Financial Services Tailored For You
-        </h1>
+        <h1 className={styles.heroTitle}>Expert Financial Services Tailored For You</h1>
         <p className={styles.heroSubtitle}>
           Unlock your financial potential with our data-driven insights and personalized strategies.
-          We provide a comprehensive suite of services to guide you through the complexities of the market.
         </p>
       </section>
 
-      {/* Services Grid */}
-      <section className={styles.grid}>
-        {services.map((service, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.icon}>
-              <span className="material-symbols-outlined">{service.icon}</span>
+      {/* Services Section */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Our <span>Services</span></h2>
+        <div className={styles.dropdownList}>
+          {services.map((service, index) => (
+            <div key={index} className={styles.dropdownItem}>
+              <button
+                className={`${styles.dropdownButton} ${openService === index ? styles.active : ""}`}
+                onClick={() => toggleService(index)}
+              >
+                <span className="material-symbols-outlined">{service.icon}</span>
+                {service.title}
+                <span className={styles.arrow}>
+                  {openService === index ? "−" : "+"}
+                </span>
+              </button>
+              {openService === index && (
+                <div className={styles.dropdownContent}>
+                  <p>{service.desc}</p>
+                </div>
+              )}
             </div>
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.cardDesc}>{service.desc}</p>
-            <a href="#" className={styles.learnMore}>
-              Learn More →
-            </a>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       {/* Plans Section */}
-      <section className={styles.plans}>
-        <h2 className={styles.plansTitle}>Our <span>Plans</span></h2>
-        <p className={styles.plansSubtitle}>
-          Choose the plan that suits your financial goals and investment strategy.
-        </p>
-
-        <div className={styles.plansGrid}>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Our <span>Plans</span></h2>
+        <div className={styles.dropdownList}>
           {plans.map((plan, index) => (
-            <div key={index} className={styles.planCard}>
-              <h3 className={styles.planName}>{plan.name}</h3>
-              <p className={styles.planDesc}>{plan.desc}</p>
-              <p className={styles.planPrice}>{plan.price}</p>
+            <div key={index} className={styles.dropdownItem}>
+              <button
+                className={`${styles.dropdownButton} ${openPlan === index ? styles.active : ""}`}
+                onClick={() => togglePlan(index)}
+              >
+                {plan.name}
+                <span className={styles.arrow}>
+                  {openPlan === index ? "−" : "+"}
+                </span>
+              </button>
+              {openPlan === index && (
+                <div className={styles.dropdownContent}>
+                  <p>{plan.desc}</p>
+                  <p className={styles.planPrice}>{plan.price}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        <Link to="/plans" className={styles.plansButton}>
+        <Link to="/plans" className={styles.button}>
           More About Plans
         </Link>
       </section>
@@ -99,19 +124,13 @@ const Services = () => {
       {/* CTA Section */}
       <section className={styles.cta}>
         <div className={styles.ctaContent}>
-          <h2 className={styles.ctaTitle}>Ready to Grow Your Wealth?</h2>
-          <p className={styles.ctaText}>
-            Take the next step towards your financial future by getting in touch with our experts today.
-          </p>
+          <h2>Ready to Grow Your Wealth?</h2>
+          <p>Take the next step towards your financial future by getting in touch with our experts today.</p>
           <Link to="/contact" className={styles.ctaButton}>
             Book Free Consultation
           </Link>
         </div>
       </section>
-
-      
-
-      <FloatingContact />
     </main>
   );
 };

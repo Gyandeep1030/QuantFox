@@ -3,7 +3,6 @@ import styles from "./About.module.css";
 import MissionSection from "../../components/MissionSection/MissionSection";
 import TeamSection from "../../components/TeamSection/TeamSection";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 import Illustration from "../../assets/Image/Illustration-img.png"
 
 import { GrCertificate } from "react-icons/gr";
@@ -90,7 +89,6 @@ const About = () => {
 
       <MissionSection />
       <TeamSection />
-      <FloatingContact/>
     </>
   );
 };

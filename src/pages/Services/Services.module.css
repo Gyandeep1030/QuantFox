@@ -1,270 +1,192 @@
+/* General layout */
 .main {
+  background-color: #0b0b0b;
   color: #fff;
-  font-family: "Manrope", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-/* HERO */
+/* ---------- HERO ---------- */
 .hero {
   text-align: center;
-  max-width: 900px;
-  margin-bottom: 4rem;
+  padding: 5rem 1.5rem 3rem;
+  background: linear-gradient(180deg, #0b0b0b 0%, #141414 100%);
 }
 
 .heroTitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
+  margin-bottom: 1rem;
+  color: #ff1c1c;
 }
 
 .heroSubtitle {
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 1rem;
-  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-@media (min-width: 640px) {
-  .heroTitle {
-    font-size: 2.5rem;
-  }
-  .heroSubtitle {
-    font-size: 1.125rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .heroTitle {
-    font-size: 2.8rem;
-  }
-}
-
-/* SERVICES GRID */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  border-color: rgba(234, 42, 42, 0.5);
-  background: rgba(234, 42, 42, 0.1);
-}
-
-.icon {
-  color: #ea2a2a;
-  font-size: 2.5rem;
-}
-
-.cardTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-top: 1rem;
-}
-
-.cardDesc {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-
-.learnMore {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #ea2a2a;
-  font-weight: 700;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover .learnMore {
-  opacity: 1;
-}
-
-/* CTA SECTION */
-.cta {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 3rem 1rem;
-  margin-top: 3rem;
-}
-
-.ctaContent {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 3rem 2rem;
+/* ---------- SECTIONS ---------- */
+.section {
+  padding: 4rem 1.5rem;
   text-align: center;
-  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle span {
+  color: #ff1c1c;
+}
+
+/* ---------- DROPDOWN LIST ---------- */
+.dropdownList {
   max-width: 800px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.ctaTitle {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.ctaText {
-  color: rgba(255, 255, 255, 0.75);
-  margin: 0 auto 2rem;
-  font-size: 1rem;
-  max-width: 600px;
-  line-height: 1.6;
-}
-
-.ctaButton {
-  background-color: #ea2a2a;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.9rem 1.2rem;
-  cursor: pointer;
+.dropdownItem {
+  border: 1px solid #222;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: #121212;
   transition: all 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
 }
 
-.ctaButton:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  color: #fff;
-}
-
-@media (min-width: 640px) {
-  .ctaTitle {
-    font-size: 2.4rem;
-  }
-  .ctaText {
-    font-size: 1.125rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ctaContent {
-    padding: 4rem 3rem;
-  }
-  .ctaTitle {
-    font-size: 2.8rem;
-  }
-
- 
-}
-
-
-/* ===== Plans Section ===== */
-.plans {
-  text-align: center;
-  margin-top: 3rem;
+.dropdownButton {
   width: 100%;
-  max-width: 1100px;
-  padding: 2rem 1rem;
-}
-
-.plansTitle {
-  font-size: 2rem;
-  font-weight: 800;
+  background: transparent;
+  border: none;
   color: #fff;
-}
-
-.plansTitle span {
-  color: red;
-}
-
-.plansSubtitle {
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.5rem;
-  margin-bottom: 2.5rem;
-  font-size: 1rem;
-}
-
-.plansGrid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .plansGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.planCard {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 2rem;
+  text-align: left;
+  padding: 1.2rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   transition: all 0.3s ease;
 }
 
-.planCard:hover {
-  background: rgba(234, 42, 42, 0.08);
-  border-color: rgba(234, 42, 42, 0.5);
-  transform: translateY(-5px);
+.dropdownButton:hover {
+  background: #1a1a1a;
+  color: #ff1c1c;
 }
 
-.planName {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
+.dropdownButton span.material-symbols-outlined {
+  color: #ff1c1c;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
 }
 
-.planDesc {
-  color: rgba(255, 255, 255, 0.7);
+.arrow {
+  font-size: 1.5rem;
+  color: #ff1c1c;
+}
+
+.dropdownContent {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 1rem 1.2rem;
   font-size: 0.95rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  border-top: 1px solid #222;
+  animation: slideDown 0.3s ease;
 }
 
 .planPrice {
-  font-weight: 700;
-  color: #ea2a2a;
-  font-size: 1rem;
+  color: #ff1c1c;
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
-.plansButton {
+/* ---------- BUTTON ---------- */
+.button {
   display: inline-block;
-  margin-top: 2.5rem;
-  background-color: #ea2a2a;
+  background: #ff1c1c;
   color: #fff;
-  padding: 0.8rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: 2rem;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin-top: 2rem;
 }
 
-.plansButton:hover {
-  opacity: 0.8;
+.button:hover {
+  background: #e01414;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  background: linear-gradient(180deg, #141414 0%, #0b0b0b 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  color: #ff1c1c;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background: #ff1c1c;
   color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
+.ctaButton:hover {
+  background: #e01414;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .dropdownButton {
+    font-size: 1rem;
+  }
+}

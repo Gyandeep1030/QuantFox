@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import styles from "./App.module.css";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import FloatingContact from "./components/FloatingContact/FloatingContact";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Outlet />
       </main>
       <Footer />
+      <FloatingContact/>
     </div>
   );
 };

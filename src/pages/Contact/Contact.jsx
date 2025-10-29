@@ -10,7 +10,6 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { FaHome } from "react-icons/fa";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 import { sendEmail } from "../../assets/emailService"; // ✅ using your existing service
 
 const Contact = () => {
@@ -237,8 +236,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
-      <FloatingContact />
     </section>
   );
 };

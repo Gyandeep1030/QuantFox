@@ -38,7 +38,7 @@ const WhoWeAre = () => {
                 <br />
                 QuantFox continues to grow under the visionary leadership of{" "}
                 <strong>Mr. Sameer</strong>, our{" "}
-                <strong>Co-Founder and CEO</strong>, who upholds the values of
+                <strong>Co-Founder and CEO</strong> and <strong>Bipasa das</strong> our <strong>Director</strong>, who upholds the values of
                 compliance, integrity, and excellence across every aspect of our
                 operations.
               </p>

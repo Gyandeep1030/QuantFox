@@ -6,13 +6,12 @@ import WhyChooseUs from "../../components/WhyChooseUS/WhyChooseUs";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 import { Link } from "react-router-dom";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 
 const Home = () => {
 
   return (
     <div>
-      <StockTicker items={mockStocks.slice(0, 8)} />
+      {/* <StockTicker items={mockStocks.slice(0, 8)} /> */}
       <main className={styles.home}>
         <div className={styles.hero}>
           <h1>Market at Your Fingertips</h1>
@@ -79,7 +78,6 @@ const Home = () => {
           </Link>
         </div>
 
-        <FloatingContact/>
       </main>
     </div>
   );

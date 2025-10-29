@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import styles from "./Plans.module.css";
-import FloatingContact from "../../components/FloatingContact/FloatingContact";
 import { createPortal } from "react-dom";
 import EnquiryForm from "../../components/EnquiryForm/EnquiryForm";
 
 const plans = [
   {
-    name: "Basic Plan",
+    name: "Basic",
     price: "₹2,499",
     period: "/3 months",
     features: [
@@ -18,7 +17,7 @@ const plans = [
     highlight: false,
   },
   {
-    name: "Premium Plan",
+    name: "Premium",
     price: "20% commission on profit",
     period: "",
     features: [
@@ -31,7 +30,7 @@ const plans = [
     highlight: true,
   },
   {
-    name: "Enterprise Plan",
+    name: "QuantFox Black Enterprise",
     price: "Custom Pricing",
     period: "",
     features: [
@@ -157,7 +156,7 @@ const Plans = () => {
         </div>
       </section>
 
-      <FloatingContact/>
+      
       
     </main>
   );
